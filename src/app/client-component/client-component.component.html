@@ -1,0 +1,13 @@
+      <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-3" *ngFor="let imagens of clientes">
+                <div class="card" style="width: 18rem;">
+                    <app-foto-component [imagem]="imagens.foto"></app-foto-component>
+                    <div class="card-body">
+                      <h5 class="card-title">{{imagens.nome}}</h5>
+                      <p class="card-text">{{imagens.sobre}}</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>

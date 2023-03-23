@@ -1,18 +1,35 @@
-<form>
-    <div class="container mt-3 mb-3">
-      <label for="exampleInputEmail1">Endereço de email</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-      <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
-    </div>
-    <div class="form-group" class="container mt-3 mb-3">
-      <label for="exampleInputPassword1">Senha</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
-    </div>
-    <div class="form-group form-check" class="container mt-5 mb-5">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
-    </div>
-    <div class="container">
-      <input class="btn btn-primary" type="submit" value="Submit">
-    </div>
+<div class="container mt-5">
+    <h1 class="text-center">Formulario Cadastro</h1>
+
+    <form [formGroup]="formDataDriven" (submit)="formData()">
+        <div class="row mt-3">
+            <div class="col">
+                <label>Informe o Nome: </label>
+                <input class="form-control" type="text"  placeholder="Informe o Nome" formControlName="nome">
+            </div>
+        </div>
+       <div class="row mt-3">
+            <div class="col">
+                <label>Informe o Sexo: </label>
+                <input class="form-control" type="text"  placeholder="Informe o Sexo " formControlName="sexo">
+            </div>
+       </div>
+       <div class="row mt-3">
+            <div class="col">
+                <label>E-mail: </label>
+                <input class="form-control" type="email"  placeholder="E-mail" formControlName="email">
+            </div>
+       </div>
+       <div class="row mt-3">
+        <div class="col">
+            <label>Cidade:  </label>
+            <input class="form-control" type="text"  placeholder="Cidade" formControlName="cidade">
+        </div>
+            </div>
+       <div class="row">
+            <div class="col">
+                <button class="btn btn-primary mt-3" type="submit">Enviar</button>
+            </div>
+       </div>       
     </form>
+</div>

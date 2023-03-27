@@ -1,34 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { FirebaseService } from '../servico/firebase.service';
 
 @Component({
   selector: 'app-formulario-component',
   templateUrl: './formulario-component.component.html',
   styleUrls: ['./formulario-component.component.css']
 })
-export class FormularioComponentComponent {
+export class FormularioComponentComponent implements OnInit{
 
   formDataDriven!: FormGroup;
-  clienteCollection!: AngularFirestoreCollection
+  
 
-  constructor(private clientes: FormBuilder, private register: AngularFirestore){
-    this.validaForm();
-
-    this.clienteCollection = register.collection("clientes")
+  constructor(private clientes: FormBuilder, private fs: FirebaseService){}
+  ngOnInit(): void {
+     this.validaForm();
   }
+
 
   validaForm(){
     this.formDataDriven = this.clientes.group({
       nome: ['',[Validators.required, Validators.minLength(5)]],
       sexo: ['', [Validators.required, Validators.minLength(5)]],
       email: ['', [Validators.required, Validators.maxLength(255)]],
-      cidade: ['', [Validators.required, Validators.maxLength(255)]]
+      cidade: ['', [Validators.required, Validators.maxLength(255)]],
+      url: ['', [Validators.required, Validators.maxLength(255)]],
     })
   }
 
   formData(){
-    this.clienteCollection.add(this.formDataDriven.value);
+    this.fs.cadastrar(this.formDataDriven.value);
   }
 
 }

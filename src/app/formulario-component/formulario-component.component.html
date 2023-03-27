@@ -4,6 +4,12 @@
     <form [formGroup]="formDataDriven" (submit)="formData()">
         <div class="row mt-3">
             <div class="col">
+                <label>Informe a Url da Foto: </label>
+                <input class="form-control" type="text"  placeholder="Informe a url " formControlName="url">
+            </div>
+       </div>
+        <div class="row mt-3">
+            <div class="col">
                 <label>Informe o Nome: </label>
                 <input class="form-control" type="text"  placeholder="Informe o Nome" formControlName="nome">
             </div>
@@ -28,7 +34,7 @@
             </div>
        <div class="row">
             <div class="col">
-                <button class="btn btn-primary mt-3" type="submit">Enviar</button>
+                <button class="btn btn-primary mt-3" type="submit" [disabled]="!formDataDriven.valid">Enviar</button>
             </div>
        </div>       
     </form>

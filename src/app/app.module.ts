@@ -16,6 +16,7 @@ import { FotoComponentComponent } from './foto-component/foto-component.componen
 import { HeaderComponentComponent } from './header-component/header-component.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environments';
+import { FormupdateComponent } from './formupdate/formupdate.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { environment } from 'src/environments/environments';
     FormularioComponentComponent,
     SobreComponentComponent,
     FotoComponentComponent,
-    HeaderComponentComponent
+    HeaderComponentComponent,
+    FormupdateComponent
   ],
   imports: [
     BrowserModule,

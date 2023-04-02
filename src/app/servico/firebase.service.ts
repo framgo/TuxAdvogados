@@ -27,6 +27,10 @@ export class FirebaseService{
         )
     }
 
+    consultaUm(id){
+        return this.collection.doc(id).valueChanges();
+    }
+
     cadastrar(dados){
         return this.collection.add(dados);
     }

@@ -16,5 +16,10 @@ export class ClientComponentComponent implements OnInit{
   ngOnInit(): void {
     this.fs.consulta().subscribe(caixinha => this.clientes = caixinha);
   }
+
+  excluir(id){
+    this.fs.excluir(id);
+
+  }
 }
 

@@ -5,13 +5,15 @@ import { FormularioComponentComponent } from './formulario-component/formulario-
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { SobreComponentComponent } from './sobre-component/sobre-component.component';
 import { FormupdateComponent } from './formupdate/formupdate.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponentComponent},
+  {path: 'home', component: HomeComponentComponent},
   {path: 'clientes', component: ClientComponentComponent},
   {path: 'formulario', component: FormularioComponentComponent},
   {path: 'sobre', component: SobreComponentComponent},
-  {path: 'update/:id', component: FormupdateComponent}
+  {path: 'update/:id', component: FormupdateComponent},
+  {path: '', component: LoginComponent}
 ];
 
 @NgModule({

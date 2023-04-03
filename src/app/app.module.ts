@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire/compat';
+
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,9 +17,11 @@ import { SobreComponentComponent } from './sobre-component/sobre-component.compo
 
 import { FotoComponentComponent } from './foto-component/foto-component.component';
 import { HeaderComponentComponent } from './header-component/header-component.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environments';
 import { FormupdateComponent } from './formupdate/formupdate.component';
+import { LoginComponent } from './login/login.component';
+import { AutenticarService } from './servico/autenticar.service';
+
 
 @NgModule({
   declarations: [
@@ -27,17 +32,19 @@ import { FormupdateComponent } from './formupdate/formupdate.component';
     SobreComponentComponent,
     FotoComponentComponent,
     HeaderComponentComponent,
-    FormupdateComponent
+    FormupdateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
     
   ],
-  providers: [],
+  providers: [AutenticarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

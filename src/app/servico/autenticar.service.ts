@@ -17,13 +17,15 @@ export class AutenticarService {
   } else {
     return this.mostrarMenu.emit(false);
   }
-  } 
+} 
 
   cadastrarUser(user){
     return this.angularFireAuth.createUserWithEmailAndPassword(user.email, user.password);
   }
 
-  logout(){}
+  logout(){
+    return this.angularFireAuth.signOut();
+  }
 
   detailsUser(){
     return this.angularFireAuth

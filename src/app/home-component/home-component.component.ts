@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AutenticarService } from '../servico/autenticar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-component',
@@ -20,5 +22,11 @@ export class HomeComponentComponent {
     } else {
      this.imagem = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2jhAY53zrNbo2sJYoJoQw0ozUuN1eWu-q5g&usqp=CAU'
     }
+  }
+
+  constructor(private autencicarService: AutenticarService, private router: Router){}
+
+  deslogar(){
+    this.autencicarService.logout();
   }
 }

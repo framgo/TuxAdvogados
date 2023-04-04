@@ -27,13 +27,10 @@ export class LoginComponent implements OnInit{
 
   formAuth(){
     if(this.nameButtonForm == "Logar"){
-      alert("Botão Login")
       this.autenticarService.autenticarUser(this.formulario.value)
-      this.router.navigate(['/home'])
     } else if(this.nameButtonForm == "Cadastrar"){
       alert("Usuario Cadastrado")
       this.autenticarService.cadastrarUser(this.formulario.value);
-      this.router.navigate(['/'])
     }
   }
 

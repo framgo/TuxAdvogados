@@ -6,14 +6,16 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { SobreComponentComponent } from './sobre-component/sobre-component.component';
 import { FormupdateComponent } from './formupdate/formupdate.component';
 import { LoginComponent } from './login/login.component';
+import { RouterGuard } from './guarda/router.guard';
+import { LoginGuard } from './guarda/login.guard';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponentComponent},
-  {path: 'clientes', component: ClientComponentComponent},
-  {path: 'formulario', component: FormularioComponentComponent},
-  {path: 'sobre', component: SobreComponentComponent},
-  {path: 'update/:id', component: FormupdateComponent},
-  {path: '', component: LoginComponent}
+  {path: 'home', component: HomeComponentComponent, canActivate: [RouterGuard]},
+  {path: 'clientes', component: ClientComponentComponent, canActivate: [RouterGuard]},
+  {path: 'formulario', component: FormularioComponentComponent, canActivate: [RouterGuard]},
+  {path: 'sobre', component: SobreComponentComponent, canActivate: [RouterGuard]},
+  {path: 'update/:id', component: FormupdateComponent, canActivate: [RouterGuard]},
+  {path: '', component: LoginComponent, canActivate: [LoginGuard]}
 ];
 
 @NgModule({

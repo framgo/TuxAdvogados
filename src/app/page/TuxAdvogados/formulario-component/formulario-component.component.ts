@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FirebaseService } from '../servico/firebase.service';
+import { FirebaseService } from '../../../servico/firebase.service';
 
 @Component({
   selector: 'app-formulario-component',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FirebaseService } from '../servico/firebase.service';
+import { FirebaseService } from '../../../servico/firebase.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({

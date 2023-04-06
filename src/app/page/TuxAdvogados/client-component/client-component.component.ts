@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from '../servico/firebase.service';
+import { FirebaseService } from '../../../servico/firebase.service';
 
 @Component({
   selector: 'app-client-component',

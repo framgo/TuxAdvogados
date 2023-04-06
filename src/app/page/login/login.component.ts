@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AutenticarService } from '../servico/autenticar.service';
+import { AutenticarService } from '../../servico/autenticar.service';
 import { Router } from '@angular/router';
 
 @Component({

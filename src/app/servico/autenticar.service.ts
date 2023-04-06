@@ -5,18 +5,11 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   providedIn: 'root'
 })
 export class AutenticarService {
-
-  mostrarMenu = new EventEmitter<boolean>();
   
   constructor(private angularFireAuth : AngularFireAuth){}
 
   autenticarUser(user){
-    if(user){
-    this.mostrarMenu.emit(true);
     return this.angularFireAuth.signInWithEmailAndPassword(user.email, user.password);
-  } else {
-    return this.mostrarMenu.emit(false);
-  }
 } 
 
   cadastrarUser(user){
